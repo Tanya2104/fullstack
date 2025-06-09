@@ -258,7 +258,7 @@
     </style>
 </head>
 <body>
-    <!-- Улучшенная шапка -->
+    <!-- Шапка -->
     <header class="header">
         <div class="header-container">
             <div class="logo-wrapper">
@@ -285,7 +285,7 @@
         @yield('content')
     </main>
 
-    <!-- Улучшенный подвал со слоганом -->
+    <!-- Подвал -->
     <footer class="footer">
         <!-- Блок с слоганом и киноплёнкой -->
         <div class="slogan-container">
@@ -302,7 +302,7 @@
                 <div class="footer-column">
                     <h3>MY SCREEN SAGA</h3>
                     <p style="opacity: 0.7; font-size: 0.9rem; line-height: 1.5;">
-                        Track your cinematic journey through the cosmos of films and series
+                        Track your cinematic journey through the cosmos
                     </p>
                 </div>
                 
