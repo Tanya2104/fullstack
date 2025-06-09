@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -8,85 +7,329 @@
     <link rel="icon" href="/images/fav.png" sizes="64x64">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #6A0DAD;
+            --primary-light: #9D4EDD;
+            --primary-glow: rgba(157, 78, 221, 0.7);
+            --text: #E0E7FF;
+            --bg: #0F0F1B;
+            --header-bg: rgba(15, 15, 27, 0.95);
+            --border: rgba(154, 92, 255, 0.2);
+        }
+        
         body {
-            background-color: #0F0F1B;
-            color: #E0E7FF;
+            background-color: var(--bg);
+            color: var(--text);
             font-family: 'Montserrat', sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            margin: 0;
         }
-        .header-logo {
-            transition: all 0.3s;
+        
+        /* Шапка */
+        .header {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
         }
-        .nav {
+        
+        .header-container {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
             gap: 1.5rem;
         }
+        
+        .header-logo {
+            height: 64px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .header-logo:hover {
+            transform: scale(1.08);
+            filter: drop-shadow(0 0 12px var(--primary-glow));
+        }
+        
+        .site-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(90deg, #9D4EDD 0%, #C77DFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Навигация */
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
         .nav-link {
             color: var(--text);
             text-decoration: none;
-            font-weight: 300;
+            font-weight: 400;
+            font-size: 1.1rem;
             padding: 0.5rem 0;
             position: relative;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
         }
+        
         .nav-link:hover {
             color: var(--primary-light);
-            filter: drop-shadow(0 0 8px rgba(154, 92, 255, 0.7));
         }
-        .nav-link::after {
+        
+        .nav-link::before {
             content: '';
             position: absolute;
+            width: 0;
+            height: 2px;
             bottom: 0;
             left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--primary-light);
-            transition: width 0.3s;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            transition: width 0.3s ease;
         }
-        .nav-link:hover::after {
+        
+        .nav-link:hover::before {
             width: 100%;
         }
+        
+        .nav-link.active {
+            color: var(--primary-light);
+            font-weight: 500;
+        }
+        
+        .nav-link.active::before {
+            width: 100%;
+        }
+        
+        /* Основное содержимое */
+        .main-content {
+            flex: 1;
+            padding: 2rem 0;
+        }
+        
+        /* Подвал */
         .footer {
+            background: linear-gradient(180deg, rgba(15,15,27,0) 0%, rgba(106,13,173,0.08) 100%);
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .slogan-container {
+            background: rgba(15, 15, 27, 0.4);
+            position: relative;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .film-perforation {
+            height: 12px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12"><circle cx="10" cy="6" r="3" fill="%239D4EDD" /></svg>') repeat-x;
+            opacity: 0.6;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+        
+        .film-perforation.top {
+            top: 0;
+        }
+        
+        .film-perforation.bottom {
+            bottom: 0;
+        }
+        
+        .slogan-text {
+            font-family: 'Montserrat', sans-serif;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: rgba(157, 78, 221, 0.9);
             text-align: center;
-            padding: 1.5rem;
-            background-color: rgba(15, 15, 27, 0.7);
-            border-top: 1px solid rgba(154, 92, 255, 0.2);
+            padding: 1.5rem 2rem;
+            background: rgba(106, 13, 173, 0.08);
+            border: 1px solid rgba(157, 78, 221, 0.15);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.05em;
+            transition: all 0.4s ease;
+        }
+        
+        .slogan-text:hover {
+            background: rgba(106, 13, 173, 0.15);
+            text-shadow: 0 0 10px rgba(157, 78, 221, 0.4);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 2rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .footer-link {
+            color: var(--text);
+            opacity: 0.7;
             font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .footer-link:hover {
+            opacity: 1;
+            color: var(--primary-light);
+            transform: translateX(3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(224, 231, 255, 0.5);
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(154, 92, 255, 0.1);
+        }
+        
+        /* Анимации */
+        @keyframes subtleGlow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        
+        .glow-effect {
+            animation: subtleGlow 3s ease-in-out infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .slogan-text {
+                font-size: 1rem;
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Шапка -->
-    <header class="py-6 border-b border-purple-900/30">
-        <div class="container mx-auto px-4 text-center">
-            <img 
-                src="/images/logo2.png" 
-                alt="My Screen Saga" 
-                class="header-logo mx-auto h-16 object-contain"
-                height="100"
-            >
+    <!-- Улучшенная шапка -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-wrapper">
+                <img 
+                    src="/images/logo2.png" 
+                    alt="My Screen Saga" 
+                    class="header-logo glow-effect"
+                >
+                <span class="site-title">MY SCREEN SAGA</span>
+            </div>
+            
             <nav class="nav">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">Movies</a>
-                <a href="#" class="nav-link">Series</a>
-                <a href="#" class="nav-link">My List</a>
+                <a href="#" class="nav-link active">Главная</a>
+                <a href="#" class="nav-link">Мой список</a>
+                <a href="#" class="nav-link">Просмотренные</a>
+                <a href="#" class="nav-link">Запланированные</a>
+                <a href="#" class="nav-link">Профиль</a>
             </nav>
         </div>
     </header>
 
     <!-- Основное содержимое -->
-    <main class="flex-grow container mx-auto px-4 py-8">
+    <main class="main-content container mx-auto px-4">
         @yield('content')
     </main>
 
-    <!-- Подвал -->
+    <!-- Улучшенный подвал со слоганом -->
     <footer class="footer">
-        <div class="container mx-auto px-4">
-            © {{ date('Y') }} My Screen Saga | 
-            <a href="#" class="hover:text-purple-200">About</a> | 
-            <a href="#" class="hover:text-purple-200">Contact</a>
+        <!-- Блок с слоганом и киноплёнкой -->
+        <div class="slogan-container">
+            <div class="film-perforation top"></div>
+            <div class="slogan-text">
+                ✦ Your story begins after the credits ✦
+            </div>
+            <div class="film-perforation bottom"></div>
+        </div>
+        
+        <!-- Основное содержимое подвала -->
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>MY SCREEN SAGA</h3>
+                    <p style="opacity: 0.7; font-size: 0.9rem; line-height: 1.5;">
+                        Track your cinematic journey through the cosmos of films and series
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Навигация</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Главная</a>
+                        <a href="#" class="footer-link">Мой список</a>
+                        <a href="#" class="footer-link">Просмотренные</a>
+                        <a href="#" class="footer-link">Запланированные</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">О нас</a>
+                        <a href="#" class="footer-link">Поддержка</a>
+                        <a href="#" class="footer-link">API</a>
+                        <a href="#" class="footer-link">Правовая информация</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © {{ date('Y') }} My Screen Saga. Все права защищены.
+            </div>
         </div>
     </footer>
 </body>
