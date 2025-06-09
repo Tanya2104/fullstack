@@ -19,9 +19,41 @@
         .header-logo {
             transition: all 0.3s;
         }
-        .header-logo:hover {
-            transform: scale(1.03);
+        .nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 300;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: var(--primary-light);
             filter: drop-shadow(0 0 8px rgba(154, 92, 255, 0.7));
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--primary-light);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: rgba(15, 15, 27, 0.7);
+            border-top: 1px solid rgba(154, 92, 255, 0.2);
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -35,9 +67,12 @@
                 class="header-logo mx-auto h-16 object-contain"
                 height="100"
             >
-            <p class="mt-3 text-purple-300 italic font-light">
-                Your story begins after the credits
-            </p>
+            <nav class="nav">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Movies</a>
+                <a href="#" class="nav-link">Series</a>
+                <a href="#" class="nav-link">My List</a>
+            </nav>
         </div>
     </header>
 
@@ -47,7 +82,7 @@
     </main>
 
     <!-- Подвал -->
-    <footer class="py-4 bg-gray-900/50 text-center text-sm text-purple-300/80">
+    <footer class="footer">
         <div class="container mx-auto px-4">
             © {{ date('Y') }} My Screen Saga | 
             <a href="#" class="hover:text-purple-200">About</a> | 
