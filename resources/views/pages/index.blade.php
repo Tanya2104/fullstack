@@ -62,18 +62,18 @@
                                 ?>
                                 <?php foreach ($features as $feature): ?>
                                 <div class="flex items-start">
-                                    <span>✦</span>
-                                    <p class="text-gray-300"><?= $feature ?></p>
+                                    <span class="star">✦</span>
+                                    <p><?= $feature ?></p>
                                 </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
 
-                        <div class="text-center">
-                            <p class="text-xl">
+                        <div class="quote">
+                            <p class="text">
                                 "Кино — это жизнь, из которой вырезали всё скучное"
                             </p>
-                            <p class="text-sm">— Альфред Хичкок</p>
+                            <p class="author">Альфред Хичкок</p>
                         </div>
                     </div>
                 </div>
