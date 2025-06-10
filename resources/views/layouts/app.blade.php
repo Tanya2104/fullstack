@@ -14,7 +14,7 @@
         <div class="header-container">
             <div class="logo-wrapper">
                 <img 
-                    src="/images/logo2.png" 
+                    src="/images/logo3.png" 
                     alt="My Screen Saga" 
                     class="header-logo glow-effect"
                 >
@@ -23,7 +23,7 @@
             
             <nav class="nav">
                 <a href="#" class="nav-link active">Главная</a>
-                <a href="#" class="nav-link">Мой список</a>
+                <a href="#" class="nav-link">Мои списки</a>
                 <a href="#" class="nav-link">Просмотренные</a>
                 <a href="#" class="nav-link">Запланированные</a>
                 <a href="#" class="nav-link">Профиль</a>

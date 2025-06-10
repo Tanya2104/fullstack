@@ -1,4 +1,4 @@
-/* Основные переменные */
+/*app.blade*/
 :root {
     --primary: #6A0DAD;
     --primary-light: #9D4EDD;
@@ -9,7 +9,6 @@
     --border: rgba(154, 92, 255, 0.2);
 }
 
-/* Базовые стили */
 body {
     background-color: var(--bg);
     color: var(--text);
@@ -115,9 +114,6 @@ body {
 .main-content {
     flex: 1;
     padding: 2rem 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
 }
 
 /* Подвал */
@@ -221,128 +217,6 @@ body {
     border-top: 1px solid rgba(154, 92, 255, 0.1);
 }
 
-/* Стили для главной страницы */
-.stats-section {
-    margin-bottom: 3rem;
-}
-
-.stat-card {
-    background: rgba(39, 39, 42, 0.3);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    border: 1px solid rgba(154, 92, 255, 0.2);
-    transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px -5px rgba(157, 78, 221, 0.1);
-}
-
-.section-title {
-    font-size: 1.5rem;
-    font-family: 'Orbitron', sans-serif;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.05em;
-}
-
-.section-title span:first-child {
-    color: var(--primary-light);
-}
-
-.section-title .divider-line {
-    margin-left: 1rem;
-    height: 1px;
-    flex-grow: 1;
-    background: linear-gradient(to right, rgba(154, 92, 255, 0.2), transparent);
-}
-
-.movie-scroll-container {
-    position: relative;
-}
-
-.scroll-content {
-    display: flex;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
-    scrollbar-width: none;
-}
-
-.scroll-content::-webkit-scrollbar {
-    display: none;
-}
-
-.movie-card {
-    flex: 0 0 auto;
-    width: 180px;
-    margin: 0 0.5rem;
-    background: rgba(39, 39, 42, 0.3);
-    border-radius: 0.5rem;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.movie-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(157, 78, 221, 0.2);
-}
-
-.movie-poster {
-    height: 240px;
-    background: rgba(63, 63, 70, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(161, 161, 170);
-}
-
-.movie-info {
-    padding: 1rem;
-}
-
-.movie-rating {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.5rem;
-}
-
-.movie-status {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    background: rgba(139, 92, 246, 0.2);
-}
-
-.list-card {
-    background: rgba(39, 39, 42, 0.3);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    border: 1px solid rgba(154, 92, 255, 0.2);
-    transition: all 0.3s ease;
-}
-
-.list-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px -5px rgba(157, 78, 221, 0.2);
-    border-color: rgba(154, 92, 255, 0.4);
-}
-
-.list-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: rgba(139, 92, 246, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1rem;
-}
-
 /* Анимации */
 @keyframes subtleGlow {
     0%, 100% { opacity: 0.8; }
@@ -353,7 +227,6 @@ body {
     animation: subtleGlow 3s ease-in-out infinite;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -372,30 +245,5 @@ body {
     .slogan-text {
         font-size: 1rem;
         padding: 1rem;
-    }
-    
-    .section-title {
-        font-size: 1.25rem;
-    }
-    
-    .movie-card {
-        width: 150px;
-    }
-    
-    .movie-poster {
-        height: 200px;
-    }
-}
-
-@media (max-width: 640px) {
-    .stats-section .grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .movie-scroll-container {
-        margin-left: -1rem;
-        margin-right: -1rem;
-        padding-left: 1rem;
     }
 }
