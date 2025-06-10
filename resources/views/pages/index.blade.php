@@ -95,10 +95,15 @@
                     <div class="cards-wrapper">
                         <?php for ($i = 1; $i <= 10; $i++): ?>
                             <div class="card">
-                                <div class="card-image" style="background-image: url('https://picsum.photos/300/200?random=<?= $i ?>');"></div>
+                                <div class="card-image">
+                                    <img 
+                                        src="/images/image<?= $i ?>.png"
+                                        alt="image" 
+                                    >
+                                </div>
                                 <div class="card-content">
                                     <h3 class="text-xl">Рекомендация <?= $i ?></h3>
-                                    <p class="text-gray-400 text-sm mb-4">Описание рекомендации номер <?= $i ?> с интересным содержанием.</p>
+                                    <p><?= file_get_contents("/text/description{$i}.txt") ?></p>
                                     <a href="#" class="card-button">
                                         Подробнее
                                     </a>
