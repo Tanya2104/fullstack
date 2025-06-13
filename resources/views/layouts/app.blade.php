@@ -59,7 +59,7 @@
                     <h3>Навигация</h3>
                     <div class="footer-links">
                         <a href="#" class="footer-link">Главная</a>
-                        <a href="#" class="footer-link">Мой список</a>
+                        <a href="#" class="footer-link">Мои списки</a>
                         <a href="#" class="footer-link">Просмотренные</a>
                         <a href="#" class="footer-link">Запланированные</a>
                     </div>

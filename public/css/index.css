@@ -105,7 +105,7 @@ section::after {
 }
 
 .cards-scroll-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: linear-gradient(90deg, #432e55 0%, #C77DFF 100%);
     border-radius: 10px;
 }
 
@@ -122,7 +122,7 @@ section::after {
 }
 
 .card {
-    background: white;
+    background: none;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     width: 280px;
@@ -160,7 +160,7 @@ section::after {
 .card-button {
     display: inline-block;
     background: var(--primary-color);
-    color: white;
+    color: #9D4EDD;
     padding: 8px 15px;
     border-radius: 4px;
     font-size: 0.9rem;
@@ -169,7 +169,7 @@ section::after {
 
 .card-button:hover {
     background: var(--secondary-color);
-    color: white;
+    color: #6A0DAD;
 }
 
 /* Текстовая секция */
@@ -247,7 +247,7 @@ section::after {
 .feature-card {
     text-align: center;
     padding: 30px 20px;
-    background: white;
+    background: linear-gradient(90deg, #9D4EDD 0%, #C77DFF 100%);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     transition: transform 0.3s;

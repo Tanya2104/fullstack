@@ -103,7 +103,7 @@
                                 </div>
                                 <div class="card-content">
                                     <h3 class="text-xl">Рекомендация <?= $i ?></h3>
-                                    <p><?= file_get_contents("/text/description{$i}.txt") ?></p>
+                                    <p>Описание рекомендации номер <?= $i ?> с интересным содержанием.</p>
                                     <a href="#" class="card-button">
                                         Подробнее
                                     </a>
