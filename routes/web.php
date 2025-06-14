@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', [IndexController::class]);
