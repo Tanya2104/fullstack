@@ -51,7 +51,12 @@
                 @endauth
 
                 <!-- Общие ссылки -->
-                <a href="#" class="nav-link">Списки</a>
+                @auth
+                    <a href="{{ route('movies.index') }}"
+                    class="nav-link {{ request()->is('movies*') ? 'active' : '' }}">
+                    Мои фильмы
+                    </a>
+                @endauth
                 <a href="#" class="nav-link">Просмотренные</a>
                 <a href="#" class="nav-link">Запланированные</a>
             </nav>
